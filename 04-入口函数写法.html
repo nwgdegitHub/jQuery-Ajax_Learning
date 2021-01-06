@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      //1
+      $(document).ready(
+        function(){
+          alert("hello world1");
+        }
+      );
+      //2
+      jQuery(document).ready(
+        function(){
+          alert("hello world2");
+        }
+      );
+      //3 推荐
+      $(function(){
+        alert("hello world3");
+      });
+      //4
+      jQuery(function(){
+        alert("hello world4");
+      });
+    </script>
+  </body>
+</html>

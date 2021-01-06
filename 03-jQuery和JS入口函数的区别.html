@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{
+        /* width: 100%;
+        height: 100%;
+        background-size: cover; */
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <img src="https://pics0.baidu.com/feed/00e93901213fb80eb6d0852030cbf529b83894e2.jpeg?token=bcd3f41665de5ee380fcfd5e64516ed8&s=A901CE14424252EC281EE2D20300D0AB" alt="">
+
+
+    <script type="text/javascript">
+
+      window.onload = function(ev){
+
+        var img = document.getElementsByTagName("img")[0];
+
+        console.log(img);
+
+        var width = window.getComputedStyle(img).width;
+
+        console.log(width);
+
+      }
+
+      $(document).ready(function(){
+
+        var $img = $("img")[0];
+
+        console.log($img);
+
+        var $width = $img.width();
+
+        console.log($width);//0 就是通过jQuery入口函数不可以拿到图片的宽度 而原生JS可以
+
+      });
+
+      //jQuery入口函数写的内容后写的不会覆盖先写的
+
+
+
+    </script>
+
+
+  </body>
+</html>

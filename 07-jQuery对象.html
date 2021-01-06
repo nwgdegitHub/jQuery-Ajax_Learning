@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div{
+        width: 200px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class=""></div>
+    <div class=""></div>
+    <div class=""></div>
+
+
+    <script type="text/javascript">
+      $(function(){
+
+        // jQuery对象其实是一个有length属性的伪数组
+
+        var $div = $("div");
+        console.log($div);
+      });
+    </script>
+  </body>
+</html>

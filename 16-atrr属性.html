@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .box{
+        color: red;
+        font-size: 50px;
+      }
+      #box3{
+        color: orange;
+        font-size: 100px;
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <span class="span1" name="111">111</span>
+    <span class="span2" name="222">222</span>
+    <span id="span3" name="333">333</span>
+
+    <script type="text/javascript">
+
+      $(function(){
+        // $("span").attr("class","box")
+        // $(".span1").attr("class","box")
+        $("#span3").attr("id","box3")
+
+      });
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .item{
+            width: 100px;
+            height: 100px;
+            background-color:orange;
+
+            &.light{
+
+            }
+
+            &:not(.light):hover{
+
+                height: 200px;
+            }
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="item light">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+  </body>
+</html>

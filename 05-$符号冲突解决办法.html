@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./test.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //方式一 释放$的使用权 完了之后全部使用jQuery
+      // jQuery.noConflict();
+      // jQuery(function(){
+      //   alert("hello jQuery");
+      // });
+
+      //方式二 自定义一个访问符号
+      var jQ = jQuery.noConflict();
+      jQ(function(){
+        alert("hello jQ");
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+
+    <button>回复ready事件</button>
+
+
+    <script type="text/javascript">
+
+      var btn = document.getElementByTagName("button")[0];
+      btn.onclick = function(){
+        alert("btn");
+      }
+
+    </script>
+
+
+    <script type="text/javascript">
+      $.holdReady(true);//暂停ready 传参数true表示暂停，传false表示恢复
+      $(document).ready(function(){
+        alert("ready")
+      });
+
+
+
+    </script>
+
+
+
+
+  </body>
+</html>

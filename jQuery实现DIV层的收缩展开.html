@@ -1,0 +1,61 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery实现DIV层的收缩展开效果_网页代码站(www.webdm.cn)</title>
+<script type="text/javascript" src="http://www.webdm.cn/themes/script/jquery.js"></script>
+<style>
+/* 收缩展开效果 */
+.text{line-height:22px;padding:0 6px;color:#666;}
+.box h1{padding-left:10px;height:22px;line-height:22px;background:#f1f1f1;font-weight:bold;}
+.box{position:relative;border:1px solid #e7e7e7;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+// 收缩展开效果
+$(document).ready(function(){
+   $(".box h4").toggle(function(){
+     $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
+   },function(){
+$(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
+   });
+});
+</script>
+<!-- 收缩展开效果 -->
+<div class="box">
+<h4>收缩</h4>
+<div class="text">
+        1<br />
+        2<br />
+        3<br />
+        4<br />
+        5<br />
+6<br />
+        7<br />
+8<br />
+        9<br />
+</div>
+</div>
+<br />
+
+
+<div class="box">
+<h4>收缩</h4>
+<div class="text">
+        1<br />
+        2<br />
+3<br />
+        4<br />
+        5<br />
+6<br />
+        7<br />
+8<br />
+        9<br />
+</div>
+</div>
+<br>
+
+
+
+</body>
+</html>

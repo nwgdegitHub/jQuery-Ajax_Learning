@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .first{
+        background-color:orange;
+        width:100%;
+        height:100px;
+        left: 0;
+        top: 0;
+      }
+      .second{
+        background-color:blue;
+        width:100%;
+        height:100px;
+
+      }
+    </style>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js" ></script>
+
+
+  </head>
+  <body>
+    <div class="first">
+
+    </div>
+
+    <div class="second">
+
+    </div>
+  </body>
+
+  <script>
+
+    $(".second").click(function(){
+
+      $(".first").toggle("normal",
+        // function(){
+        // $(".first").css("background-color","green");},
+        // function(){
+        // $(".first").css("background-color","red");},
+        // function(){
+        // $(".first").css("background-color","yellow");}
+        //此种用法 1.8以上就被淘汰了
+
+      );
+    });
+
+  </script>
+
+</html>

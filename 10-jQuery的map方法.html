@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //伪数组
+      var obj = {0:1,1:3,2:5,3:7,4:9,length:5};
+
+      //原生JS遍历
+      //不能遍历伪数组
+      var arr = [1,3,5,7,9];
+      arr.map(function(value,index,array){
+        // console.log(index,value,array)
+      });
+
+      //利用jQuery 的$.map()
+      // $.map()也可以遍历伪数组
+      var ret2 = $.map(arr,function(value,index){
+        console.log(index,value)
+      })//[]
+      var ret1 = $.each(arr,function(index,value){
+        console.log(index,value)
+      })//arr
+      //each 遍历谁就返回谁，map默认返回一个空数组，如果有return语句，则返回
+      //return语句作用在元素上之后的新数组
+
+    </script>
+  </body>
+</html>

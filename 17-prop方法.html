@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <span class="span1" name="111">111</span>
+    <span class="span2" name="222">222</span>
+    <input type="checkbox" checked>
+
+    <script type="text/javascript">
+
+      $(function(){
+        //$("span").eq(0) 表示找到第0个span
+        $("span").eq(0).prop("demo","it666"); //新增一个demo属性 赋值为it666
+
+        console.log($("span").prop("demo"));
+
+        $("span").removeProp("demo");
+
+        console.log($("span").prop("demo"));
+
+
+        //------------------------------------ 可以用来判断是否选中
+        console.log($("input").prop("checked"));//true
+        console.log($("input").attr("checked"));//checked
+
+
+
+
+      });
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //伪数组
+      var obj = {0:1,1:3,2:5,3:7,4:9,length:5};
+
+      //原生JS遍历
+      //不能遍历伪数组
+      var arr = [1,3,5,7,9];
+      arr.forEach(function(value,index){
+        // console.log("-----"+index+"----"+value);
+      })
+
+      //利用jQuery 的$.each()
+      // $.each()也可以遍历伪数组
+      $.each(arr,function(index,value){
+        console.log(index,value)
+      })
+
+    </script>
+  </body>
+</html>

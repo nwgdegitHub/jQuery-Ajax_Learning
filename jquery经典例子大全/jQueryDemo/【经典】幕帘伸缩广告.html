@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>幕帘伸缩广告</title>
+<script type="text/javascript" src="common/jquery-1.2.6.min.js"></script>
+<link type="text/css" rel="stylesheet" href="common/common.css" />
+<style>
+/* 幕帘伸缩广告 */
+#bannerBig,#bannerSmall{width:960px; margin:0 auto;}
+#bannerSmall{display:none;}
+</style>
+<script type="text/javascript">
+// 幕帘伸缩广告
+$(function(){
+	setTimeout("showBanner();",5000);
+});
+function showBanner(){
+	$("#bannerBig").slideUp(1000,function(){$("#bannerSmall").slideDown(1000);});
+}
+</script>
+</head>
+<body>
+<!-- 幕帘伸缩广告 -->
+<div id="bannerBig"><a target="_blank" href="#"><img src="http://image.qianxun.com/img_files/20091005164000_960_500.jpg"></a></div>
+<DIV id="bannerSmall"><A target="_blank" href="#"><IMG src="http://image.qianxun.com/img_files/20091005164019_960_80.jpg"></A></DIV>
+</body>
+</html>
