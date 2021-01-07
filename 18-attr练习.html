@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+
+
+  </head>
+  <body>
+    <input type="text" name="" value="./images/lyf/f2.jpg">
+    <button type="button" name="button">换一张</button><br>
+    <img src="./images/lyf/f2.jpg" alt="">
+
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        var btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function(){
+          //alert("123");
+
+          var input = document.getElementsByTagName("input")[0];
+          var text = input.value;
+          //$("img").prop("src",text);
+          $("img").attr("src",text);
+
+        }
+
+      });
+
+    </script>
+  </body>
+</html>

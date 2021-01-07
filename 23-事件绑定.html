@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">快点我</button>
+
+    <script type="text/javascript">
+
+
+
+      $(function(){
+
+        //有局限性
+        // $("button").click(function(){
+        //   alert("click方式")
+        // });
+
+        //都能实现
+        // $("button").on("click",function(){
+        //   alert("on方式")
+        // });
+
+
+//click添加多个试试(不会覆盖)
+$("button").click(function(){
+  alert("click1")
+});
+
+$("button").click(function(){
+  alert("click2")
+});
+
+// $("button").mouseleave(function(){
+//   alert("mouseleave")
+// });
+//
+// $("button").mouseenter(function(){
+//   alert("mouseenter")
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      });
+
+    </script>
+
+  </body>
+</html>

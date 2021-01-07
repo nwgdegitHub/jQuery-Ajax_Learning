@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+
+    <button type="button" name="button">设置html</button>
+    <button type="button" name="button">获取html</button>
+
+    <button type="button" name="button">设置text</button>
+    <button type="button" name="button">获取text</button>
+
+    <button type="button" name="button">设置value</button>
+    <button type="button" name="button">获取value</button>
+
+    <div class=""></div>
+    <input type="text" name="" value="">
+
+
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        // html
+        // text
+        // val
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function(){
+          $("div").html("<p>我是P<span>我是span</span></p>");
+
+        }
+        btns[1].onclick = function(){
+
+          console.log($("div").html());
+        }
+        btns[2].onclick = function(){
+
+
+        }
+        btns[3].onclick = function(){
+
+
+        }
+        btns[4].onclick = function(){
+
+
+        }
+        btns[5].onclick = function(){
+
+
+        }
+
+
+      });
+
+    </script>
+
+  </body>
+</html>

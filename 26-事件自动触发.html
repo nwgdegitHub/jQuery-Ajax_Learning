@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .father{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      .son{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">
+
+      </div>
+    </div>
+    <a href="https://www.jd.com">京东</a>
+
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        $(".son").click(function (event) {
+          alert("son");
+          //写了下面两句 点son father不会响应
+          // return false;
+          // event.stopPropagation();
+
+        })
+        $(".father").click(function (event) {
+          alert("father");
+
+        })
+        //网页加载完毕 会自动触发click 下面两个效果一样
+        //区别就是  trigger不会阻止 father
+        //而triggerHandler会阻止 father
+        $(".son").trigger("click");
+        // $(".son").triggerHandler("click");
+
+
+
+
+        $("a").click(function(event){
+          // alert("a")
+
+          //下面两个效果一样 都会阻止a标签的默认跳转
+          // return false;
+          // event.preventDefault();
+
+        })
+
+        //如果想自动触发a标签的点击跳转事件 最好在a里面包装span
+
+
+      });
+
+    </script>
+
+  </body>
+</html>

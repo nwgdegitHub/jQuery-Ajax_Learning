@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .father{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      .son{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">
+
+      </div>
+    </div>
+    <a href="https://www.jd.com">京东</a>
+
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        $(".son").on("myClick",function(){
+          alert("son");
+        });
+        $(".son").trigger("myClick");
+
+        //使用.click无法实现 只能用.on
+
+      });
+
+    </script>
+
+  </body>
+</html>

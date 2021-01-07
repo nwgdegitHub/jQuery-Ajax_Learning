@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">点我吧</button>
+
+    <script type="text/javascript">
+
+      $(function(){
+        function test1(){
+          alert("test1")
+        }
+        function test2(){
+          alert("test2")
+        }
+
+        $("button").click(test1);
+        $("button").click(test2);
+
+        //不传参代表移除所有事件
+        $("button").off();
+        //传一个会移除 所有指定类型事件
+        $("button").off("click");
+        //传两个参数 会移除所有指定类型的指定事件
+        $("button").off("click",test1);
+
+      });
+
+    </script>
+
+  </body>
+</html>
