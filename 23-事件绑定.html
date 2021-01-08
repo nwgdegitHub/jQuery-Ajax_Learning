@@ -29,13 +29,13 @@
 
 
 //click添加多个试试(不会覆盖)
-$("button").click(function(){
-  alert("click1")
-});
-
-$("button").click(function(){
-  alert("click2")
-});
+// $("button").click(function(){
+//   alert("click1")
+// });
+//
+// $("button").click(function(){
+//   alert("click2")
+// });
 
 // $("button").mouseleave(function(){
 //   alert("mouseleave")
@@ -46,6 +46,14 @@ $("button").click(function(){
 // });
 
 
+//on 绑定的事件也不会覆盖
+$("button").on("click",function(){
+  alert("on click1")
+});
+
+$("button").on("click",function(){
+  alert("on click2")
+});
 
 
 

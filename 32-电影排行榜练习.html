@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+*{
+  margin: 0;
+  padding: 0;
+}
+.box{
+  width: 600px;
+  height: 800px;
+  margin: 0 auto;
+  background-color: yellow;
+}
+.box>h1{
+  color: deeppink;
+  border-bottom: 1px dashed #666;
+}
+.box>ul>li{
+  list-style: none;
+  padding: 5px 10px;
+  border-bottom: 1px dashed #000;
+}
+.box>ul>li>span{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: lightgray;
+  text-align: center;
+  display: inline-block;
+  line-height: 20px;
+}
+.box>ul>li:nth-child(-n+3) span{
+  background-color:pink;
+}
+.content{
+  margin-top: 20px;
+  display: none;
+}
+
+ .content>img{
+  width: 228px;
+  height: auto;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+
+}
+.content>p{
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
+
+.current .content{
+  display: block;
+}
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <h1>电影排行榜</h1>
+      <ul>
+        <li>
+          <span>1</span>电影名1
+          <div class="content">
+            <img src="./images/lyf/f1.jpg" alt="">
+            <p>《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。2020年3月20日，《战狼Ⅱ》重映。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。该片以56.8亿元雄踞国产电影历史最高票房纪录。</p>
+          </div>
+        </li>
+        <li><span>2</span>电影名2
+          <div class="content">
+            <img src="./images/lyf/f1.jpg" alt="">
+            <p>《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。2020年3月20日，《战狼Ⅱ》重映。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。该片以56.8亿元雄踞国产电影历史最高票房纪录。</p>
+          </div>
+        </li>
+        <li><span>3</span>电影名3
+          <div class="content">
+            <img src="./images/lyf/f1.jpg" alt="">
+            <p>《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。2020年3月20日，《战狼Ⅱ》重映。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。该片以56.8亿元雄踞国产电影历史最高票房纪录。</p>
+          </div>
+        </li>
+        <li><span>4</span>电影名4
+          <div class="content">
+            <img src="./images/lyf/f1.jpg" alt="">
+            <p>《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。2020年3月20日，《战狼Ⅱ》重映。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。该片以56.8亿元雄踞国产电影历史最高票房纪录。</p>
+          </div>
+        </li>
+        <li><span>5</span>电影名5
+          <div class="content">
+            <img src="./images/lyf/f1.jpg" alt="">
+            <p>《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。2020年3月20日，《战狼Ⅱ》重映。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。该片以56.8亿元雄踞国产电影历史最高票房纪录。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        $("li").hover(func1,func2);
+
+        function func1(){
+          console.log('over');
+          $(this).addClass("current");
+
+        }
+        function func2(){
+          console.log('out');
+          $(this).removeClass("current");
+
+        }
+      });
+
+
+
+    </script>
+
+  </body>
+</html>

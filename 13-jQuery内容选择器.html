@@ -3,12 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      div{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        margin-top: 5px;
+      }
+    </style>
     <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
   </head>
   <body>
-
-
-
+    <div class=""></div>
+    <div class="">我是div</div>
+    <div class="">div123</div>
+    <div class="">
+      <span></span>
+    </div>
+    <div class="">
+      <p></p>
+    </div>
     <script type="text/javascript">
 
       $(function(){
@@ -17,6 +31,18 @@
         // :has(selector) 作用是 找到包含指定子元素的指定元素
         // :empty  作用是 找到既没有文本内容也没有子元素的指定元素
         // :parent 作用是 找到有文本内容或者有子元素的指定元素
+
+        var $div1 = $("div:empty");
+        console.log($div1);
+
+        var $div2 = $("div:parent");
+        console.log($div2);
+
+        var $div3 = $("div:contains('div123')");
+        console.log($div3);
+
+        var $div4 = $("div:has('span')");
+        console.log($div4);
 
       });
 
