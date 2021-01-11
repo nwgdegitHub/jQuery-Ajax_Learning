@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div{
+        width: 100px;
+        height: 500px;
+        background-color: orange;
+        display: none;
+      }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">展开</button>
+    <button type="button" name="button">收起</button>
+    <button type="button" name="button">切换</button>
+    <div class="">
+
+    </div>
+
+    <script type="text/javascript">
+
+      $(function(){
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function(){
+          $("div").show(1000,function(){
+
+          })
+
+        }
+        btns[1].onclick = function(){
+          $("div").hide(1000,function(){
+
+          })
+
+        }
+        btns[2].onclick = function(){
+          $("div").toggle(1000,function(){
+
+          })
+
+        }
+
+      });
+
+    </script>
+
+  </body>
+</html>
