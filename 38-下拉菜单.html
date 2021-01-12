@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    *{
+      margin:0;
+      padding: 0;
+    }
+      .first{
+        width: 300px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      .first>li{
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 50px;
+        background-color: orange;
+        line-height: 50px;
+        text-align: center;
+      }
+      .first .sub{
+        display: none;
+      }
+      .first .sub>li{
+        list-style: none;
+        background-color: pink;
+        border: 1px solid #ccc;
+      }
+      /* .first>li:hover{
+        background-color: blue;
+      } */
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+
+    <ul class="first">
+      <li>一级菜单
+        <ul class="sub">
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+        </ul>
+      </li>
+      <li>一级菜单
+        <ul class="sub">
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+        </ul>
+      </li>
+      <li>一级菜单
+        <ul class="sub">
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- //这个例子的重点是stop(),建议开始一个动画前停止一切效果 -->
+    <script type="text/javascript">
+
+      $(function(){
+
+
+        $(".first>li").mouseenter(function(){
+          $(this).children(".sub").stop()
+          $(this).children(".sub").slideDown(500,function(){})
+          $(this).siblings().children(".sub").slideUp(500,function(){})
+        })
+
+        $(".first>li").mouseleave(function(){
+          $(this).children(".sub").stop()
+          $(this).children(".sub").slideUp(500,function(){})
+        })
+
+
+      });
+
+    </script>
+
+  </body>
+</html>

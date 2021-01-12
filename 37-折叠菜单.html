@@ -4,17 +4,123 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .navi>li{
+      list-style: none;
+      width: 200px;
+      /* height: 30px;
+      line-height: 30px; */
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .sub{
+      display: none;
+    }
+
+    .sub>li{
+      height: 30px;
+      width: 200px;
+      background-color: yellow;
+      list-style: none;
+      border-top: 1px solid #ccc;
+
+    }
+    .sub>li:hover{
+      background-color: red;
+    }
 
     </style>
     <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
   </head>
   <body>
+    <ul class="navi">
+      <li>一级菜单
+        <span>+</span>
+        <ul class="sub">
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+        </ul>
+      </li>
+      <li>一级菜单
+        <span>+</span>
+        <ul class="sub">
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+          <li>二级菜单</li>
+        </ul>
+      </li>
+      <li>
+        一级菜单
+          <span>+</span>
+          <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+          </ul>
+        </li>
+      <li>
+        一级菜单
+          <span>+</span>
+          <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+          </ul>
+        </li>
+    </ul>
 
 
     <script type="text/javascript">
 
       $(function(){
+        $(".navi>li").click(function(){
 
+// this.title = "abc" //成功
+// $(this).title = "abc" //失败
+console.log($(this).attr('isDown'));
+if($(this).attr('isDown') == undefined || $(this).attr('isDown') == false){
+
+  $(this).attr('isDown',true);
+
+  var $sub = $(this).children(".sub");
+  $sub.slideDown(500,function(){})
+
+  var $otherSub = $(this).siblings().children(".sub")
+  $otherSub.slideUp()
+
+  var $span = $(this).children("span");
+  $span.html("-")
+
+  var $otherSpan = $(this).siblings().children("span")
+  $otherSpan.html("+")
+}
+else{
+
+  $(this).attr('isDown',false);
+
+  var $sub = $(this).children(".sub");
+  $sub.slideUp(500,function(){})
+
+  var $span = $(this).children("span");
+  $span.html("+")
+
+}
+
+
+
+
+
+
+
+        })
       });
 
     </script>

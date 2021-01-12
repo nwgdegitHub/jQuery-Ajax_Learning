@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .div2{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+
+    }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+
+    <button type="button" name="button">操作属性</button>
+    <button type="button" name="button">累加属性</button>
+    <button type="button" name="button">关键字</button>
+
+    <div class="div1"></div>
+    <div class="div2"></div>
+<div class="div3"></div>
+
+    <script type="text/javascript">
+
+      $(function(){
+        var btns = document.getElementsByTagName('button');
+
+        btns[0].onclick = function(){
+
+          //animate()参数如下
+          $(".div1").animate({marginLeft: 500},1000,"linear",function(){
+            alert("报告老板动画执行完毕")
+          })
+        }
+        btns[1].onclick = function(){
+          $(".div2").animate({width: "+=100"},1000,"linear",function(){
+            alert("报告老板动画执行完毕")
+          })
+        }
+        btns[2].onclick = function(){
+          $(".div3").animate({width: "hide"},1000,"linear",function(){
+            alert("报告老板动画执行完毕")
+          })
+        }
+      });
+
+    </script>
+
+  </body>
+</html>

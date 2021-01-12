@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .div2{
+      width: 400px;
+      height: 10px;
+      background-color: orange;
+
+    }
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">开始</button>
+    <button type="button" name="button">结束</button>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <script type="text/javascript">
+
+      $(function(){
+
+        $("button").eq(0).click(function(){
+
+          //写法1
+          // $(".div1").animate({
+          //   width:500,
+          //   height:500
+          // },1000);
+
+          $(".div1").animate({
+            width:500,
+
+          },1000).delay(1000).animate({
+
+            height:500
+          },1000);
+
+
+
+
+        })
+        $("button").eq(1).click(function(){
+          //参数1 是否停止后续
+          //参数2 是否完成当前
+          $(".div1").stop(true,true)
+        })
+
+
+
+
+      });
+
+    </script>
+
+  </body>
+</html>
