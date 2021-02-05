@@ -4,20 +4,121 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .div1{
+        width:600px;
+        height: 800px;
+        border: 1px solid gold;
+        margin: 100px auto;
+        /* position: relative; */
+        overflow: hidden;
+        background-color:black;
+      }
+      ul{
+        width: 3000px;
+        height: 100%;
 
+        /* animation: move 10s linear 0s infinite normal; */
+      }
+
+      @keyframes move {
+        from{
+          margin-left: 0;
+        }
+        to{
+          margin-left: -1800px;
+          /* 移动3张时跳到第一张 这样看不出来 所以视觉效果就是无限轮播 */
+        }
+      }
+
+      ul:hover{
+        animation-play-state: paused;
+      }
+
+      ul li{
+        list-style: none;
+        width: 600px;
+        height: 100%;
+        float: left;
+
+        /* position: absolute;
+        left: 0;
+        top: 0; */
+      }
+      ul li:nth-child(1){
+        background-image: url("./images/lyf/f1.jpg");
+      }
+      ul li:nth-child(2){
+        background-image: url("./images/lyf/f2.jpg");
+      }
+      ul li:nth-child(3){
+        background-image: url("./images/lyf/f3.jpg");
+      }
+      ul li:nth-child(4){
+        background-image: url("./images/lyf/f1.jpg");
+      }
+      ul li:nth-child(5){
+        background-image: url("./images/lyf/f2.jpg");
+      }
+      ul:hover li{
+        opacity: 0.5;
+      }
+      ul li:hover{
+        opacity: 1;
+      }
     </style>
     <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
   </head>
   <body>
-
-
+    <div class="div1">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
     <script type="text/javascript">
 
       $(function(){
+        var offset = 0;
+        var timer;
+        function autoPlay(){
+          timer = setInterval(function(){
+            offset += -1;
+            if (offset<=-1800) {
+              offset = 0;
+            }
+            $("ul").css("marginLeft",offset)
+          },5);
+        }
+        autoPlay();
 
+        $("li").hover(func1,func2);
+
+        function func1(){
+          //停止滚动
+          clearInterval(timer)
+
+          //加蒙板
+          $(this).siblings().fadeTo(10,0.5)
+
+          //去掉当前
+          $(this).fadeTo(10,1)
+
+        }
+        function func2(){
+          autoPlay();
+          $("li").fadeTo(10,1)
+        }
       });
 
-    </script>
 
+
+    </script>
   </body>
 </html>

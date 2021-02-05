@@ -12,16 +12,16 @@
     <span>我是span</span>
 
     <script type="text/javascript">
-      //1。可以接受一个函数
+      //1。$()可以接受一个函数
       $(function(){
 
-        // 2。可以接受选择器
+        // 2。可以接受选择器 返回jQuery对象
         var $box1 = $(".box1");
         var $box2 = $("#box2");
         console.log($box1);
         console.log($box2);
 
-        var $p = $("<p>我是段落"</p>);
+        var $p = $("<p>我是段落</p>");
         console.log($p);
         $box1.append($p);
 

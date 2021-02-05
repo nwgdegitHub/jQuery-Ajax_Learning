@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">点我添加节点</button>
+    <ul>
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li class="item">我是li3</li>
+      <li class="item">我是li4</li>
+    </ul>
+
+<div class="">
+  <p>hahaha</p>
+</div>
+
+<h1>我是h1</h1>
+<h1>我是另外一个h1</h1>
+
+
+
+    <script type="text/javascript">
+
+    /**
+    replaceWith()
+    replaceAll(selctor)
+    */
+
+      $(function(){
+
+        $("button").click(function(){
+
+          var $h6 = $("<h6>我是h6</h6>");
+
+//打开试试
+// $("h1").replaceWith($h6)
+
+$h6.replaceAll("h1")
+
+
+        })
+
+      });
+
+    </script>
+
+  </body>
+</html>

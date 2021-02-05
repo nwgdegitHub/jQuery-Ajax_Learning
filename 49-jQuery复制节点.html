@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button">浅复制节点</button>
+    <button type="button" name="button">深复制节点</button>
+    <ul>
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li class="item">我是li3</li>
+      <li class="item">我是li4</li>
+    </ul>
+
+<div class="">
+  <p>hahaha</p>
+</div>
+
+<h1>我是h1</h1>
+<h1>我是另外一个h1</h1>
+
+
+
+    <script type="text/javascript">
+
+    /**
+    clone([Even[,deepEven]])
+    浅复制只会复制元素 不会复制元素的事件
+    深复制不仅会复制元素 也会复制元素的事件
+    */
+
+      $(function(){
+
+        $("button").eq(0).click(function(){
+          var $li = $("li:first").clone(false)
+          $("ul").append($li)
+
+        })
+        $("button").eq(1).click(function(){
+
+          var $li = $("li:first").clone(true)
+          $("ul").append($li)
+        })
+      });
+
+    </script>
+
+  </body>
+</html>

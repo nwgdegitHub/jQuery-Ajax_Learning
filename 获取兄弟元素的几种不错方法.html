@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Main title h1</h1>
+      <h2>Section title h2</h2>
+      <p>Some content... p</p>
+      <h2>Section title h2</h2>
+      <p>More content... p</p>
+    </div>
+
+    <ul>
+      <li>First item</li>
+      <li class="selected">Second Item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+      <li>Fifth item</li>
+    </ul>
+
+    <script type="text/javascript">
+
+      $(function(){
+        //获取下例中所有的 h1的直接兄弟元素h2
+        console.log($('h1 + h2') );
+
+        //过滤h1的兄弟元素
+        console.log($('h1').siblings('h2,h3,p'));
+
+        //要获取当前元素之后的所有兄弟元素，可以使用nextAll()
+        console.log($('li.selected').nextAll('li'));
+        //或者
+        console.log($('li.selected ~ li'));
+
+        //获取直接兄弟元素也可以不使用selector，直接使用next()
+        //next()相邻下一个同级元素
+        // prev()相邻上一个同级元素
+        // siblings()所有同级元素
+        var topHeaders = $('h1');
+        topHeaders.next('h2').css('margin', '0);
+
+
+      });
+
+    </script>
+
+  </body>
+</html>

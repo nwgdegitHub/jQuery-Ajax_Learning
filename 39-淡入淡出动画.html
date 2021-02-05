@@ -18,6 +18,7 @@
     <button type="button" name="button">淡入</button>
     <button type="button" name="button">淡出</button>
     <button type="button" name="button">切换</button>
+    <button type="button" name="button">淡入到</button>
     <div class="">
 
     </div>
@@ -29,12 +30,17 @@
         var $div = $("div");
         btns[0].onclick = function(){
           $("div").fadeIn(1000,function(){})
+
         }
         btns[1].onclick = function(){
           $("div").fadeOut(1000,function(){})
+
         }
         btns[2].onclick = function(){
           $("div").fadeToggle(1000,function(){})
+        }
+        btns[3].onclick = function(){
+          $("div").fadeTo(1000,0.1);
         }
       });
 
