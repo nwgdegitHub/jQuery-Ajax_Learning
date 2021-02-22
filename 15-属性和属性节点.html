@@ -22,11 +22,30 @@
       $(function(){
 
           var span = document.getElementsByTagName("span")[0];
-          span.setAtrribute("name","LW")
-          console.log(span.getAtrribute("name"));
+          span.setAttribute("name","LW");
+          console.log(span.getAttribute("name"));
       });
 
     </script>
+
+
+        <!-- jQuery中attr( )和prop( )都可以用来设置或者读取某元素的属性值，
+        但是他们之间也有很大区别，prop( )是针对Dom元素属性，attr( )针对HTML元素属性
+
+      Attribute和Property分别为特性和属性
+    Attribute就是DOM节点自带属性，例如我们在HTML中常用的id,class,src,title,alt等。
+    而Property则是这个DOM元素作为对象，其附加的属性或者内容，例如childNodes，firstChild等
+
+Attribute取值和赋值如上
+Property取值和赋值
+ = 右边点号
+左边点号 =
+
+
+prop( )是针对Dom元素属性，attr( )针对HTML元素属性，和attribute与property区别一样。
+
+    -->
+
 
 
   </body>
