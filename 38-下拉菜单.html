@@ -74,16 +74,32 @@
       $(function(){
 
 
-        $(".first>li").mouseenter(function(){
-          $(this).children(".sub").stop()
-          $(this).children(".sub").slideDown(500,function(){})
-          $(this).siblings().children(".sub").slideUp(500,function(){})
-        })
+        // $(".first>li").mouseenter(function(){
+        //   $(this).children(".sub").stop()
+        //   $(this).children(".sub").slideDown(500,function(){})
+        //   $(this).siblings().children(".sub").slideUp(500,function(){})
+        // })
+        //
+        // $(".first>li").mouseleave(function(){
+        //   $(this).children(".sub").stop()
+        //   $(this).children(".sub").slideUp(500,function(){})
+        // })
 
-        $(".first>li").mouseleave(function(){
-          $(this).children(".sub").stop()
-          $(this).children(".sub").slideUp(500,function(){})
-        })
+// mouseenter 和  mouseleave 效果等同于hover
+
+
+$(".first>li").hover(func1,func2);
+
+function func1(){
+  $(this).children(".sub").stop()
+  $(this).children(".sub").slideDown(500,function(){})
+  $(this).siblings().children(".sub").slideUp(500,function(){})
+}
+function func2(){
+  $(this).children(".sub").stop()
+  $(this).children(".sub").slideUp(500,function(){})
+}
+
 
 
       });

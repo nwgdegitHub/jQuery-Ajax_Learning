@@ -80,45 +80,44 @@
 
     <script type="text/javascript">
 
+
+    // 注意这里又一个问题，用attr会检测不到 用prop才行
       $(function(){
         $(".navi>li").click(function(){
 
 // this.title = "abc" //成功
 // $(this).title = "abc" //失败
-console.log($(this).attr('isDown'));
-if($(this).attr('isDown') == undefined || $(this).attr('isDown') == false){
+        console.log($(this).prop('isDown'));
+        console.log($(this));
+        if ($(this).prop('isDown') == false || $(this).prop('isDown') == undefined) {
+          console.log("...1");
+          $(this).prop('isDown',true);
 
-  $(this).attr('isDown',true);
+          var $sub = $(this).children(".sub");
+          $sub.slideDown(500,function(){})
 
-  var $sub = $(this).children(".sub");
-  $sub.slideDown(500,function(){})
+          var $otherSub = $(this).siblings().children(".sub")
+          $otherSub.slideUp()
 
-  var $otherSub = $(this).siblings().children(".sub")
-  $otherSub.slideUp()
+          var $span = $(this).children("span");
+          $span.html("-")
 
-  var $span = $(this).children("span");
-  $span.html("-")
+          var $otherSpan = $(this).siblings().children("span")
+          $otherSpan.html("+")
 
-  var $otherSpan = $(this).siblings().children("span")
-  $otherSpan.html("+")
-}
-else{
+        }
 
-  $(this).attr('isDown',false);
+        else {
+          console.log("...3");
+          $(this).prop('isDown',false);
 
-  var $sub = $(this).children(".sub");
-  $sub.slideUp(500,function(){})
+          var $sub = $(this).children(".sub");
+          $sub.slideUp(500,function(){})
 
-  var $span = $(this).children("span");
-  $span.html("+")
+          var $span = $(this).children("span");
+          $span.html("+")
 
-}
-
-
-
-
-
-
+        }
 
         })
       });
