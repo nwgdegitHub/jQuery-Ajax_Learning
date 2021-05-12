@@ -18,6 +18,7 @@
 
     <script type="text/javascript">
 
+      //网页中所有的元素(包括元素的所有关联文件)完全加载到浏览器后才执行
       window.onload = function(ev){
 
         var img = document.getElementsByTagName("img")[0];
@@ -30,6 +31,7 @@
 
       }
 
+      //在DOM载入就绪时就对其进行操纵
       $(document).ready(function(){
 
         var $img = $("img")[0];
@@ -42,7 +44,7 @@
 
       });
 
-      //jQuery入口函数写的内容后写的不会覆盖先写的
+      //jQuery入口函数写的内容 后写的 不会覆盖 先写的
 
 
 

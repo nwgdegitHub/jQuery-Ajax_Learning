@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      window.onload = function(ev){
+        /**
+        cookie: 客户端会话跟踪技术，作用是将网页中的数据保存到浏览器，
+        session: 服务端会话跟踪技术
+// 启动服务器，在Application 中找到当前网页对应网址，可见
+
+cookie生命周期： 默认情况下生命周期是一次会话（浏览器被关闭就结束了）那也可以设置过期时间，这样即使关闭浏览器，cookie中的数据还在
+
+//https://www.w3school.com.cn/js/js_cookies.asp
+
+注意点：
+1. cookie默认不会保存任何数据
+2. 不能一次设置多条 只能一次设置一条
+3. 限制20～50个， 数据大小限制4KB
+4. cookie的访问需要在同一浏览器的同一路径下
+5. document.cookie = "age=33;path=/;domain=XXX.com"; 表示保存到根路径,表示指定根域名
+
+那web Storage有什么不同?
+
+        */
+        document.cookie = "age=33";
+
+        alert(document.cookie)
+
+//封装cookie添加方法
+        function addCookie(key,value,day,path,domain){
+          //console.log(window.location.pathname);
+          var index = window.location.pathname.lastIndexOf("/");
+          var currentPath = window.location.pathname.slice(0,index);
+          path = path || currentPath //传入参数中有path就用path 没有就用currentPath
+
+          //2.处理默认domain
+          if (!day) {
+            document.cookie = key + "="+value+";path="+path+";domain"+domain+";"
+          }
+          else{
+            var d = new Date();
+            // d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            d.setDate(date.getDate() - day);
+
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = key + "="+value+expires+";path="+path+";domain"+domain+";";
+          }
+        }
+
+        function getCookie(key){
+          var res = document.cookie.split(";");
+          for (var i = 0; i < res.length; i++) {
+            var temp = res[i].split("=");
+            if (temp[0].trim() === key) {
+              return temp[1];
+            }
+            res[i]
+          }
+
+        }
+
+        function delCookie(key){
+          addCookie(key, getCookie(key), -1);
+        }
+
+
+
+
+
+
+
+      }
+    </script>
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
